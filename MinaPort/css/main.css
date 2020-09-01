@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* height: 100vh; */
+    background-color:white;
+    display: flex;
+    /* min-height: 100vh; */
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.colonne-1 {
+    /* background: #D7E8D4; */
+    flex: 2;
+}
+.colonne-1 #c1Content{
+    position: fixed;
+}
+.menuAbsolute li:first-child{
+    padding-top: 10vh;
+}
+
+
+#c1Content ul {
+    padding-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  
+}
+#c1Content ul a{
+    color: rgb(173, 173, 173);
+    text-decoration: none;
+}
+.colonne-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 4;
+}
+@media screen and (max-width: 640px) {
+    body {
+     background: blueviolet;
+    }
+  }
+.content {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    align-items: center;
+}
+
+.content>article {
+    flex: 3;
+    min-height: 60vh;
+}
+
+/* .content>aside {
+    background: beige;
+    flex: 1;
+} */
+
+header, footer {
+    /* background: yellowgreen; */
+    height: 100vh;
+}
+
+header, footer, article, nav, aside {
+    padding: 1em;
+}
+#homeImage{
+    display: block;
+}
+.carousel-control-next, .carousel-control-prev {
+    width: 50%;
+}
+#homePicture{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+a.bigTitle {
+    font-weight: 700;
+    position: inherit;
+    text-decoration: none;
+    color: black;
+}
+/* h1.bigTitle{
+    text-decoration: none;
+    color: black;
+} */
+.imgFull{
+    height:65vh;
+    width: auto;
+}
+footer{
+    display: flex;
+    justify-content: initial;
+    flex-direction: column;
+}
+footer p{
+    padding-right: 20vh;
+    line-height: 1.2;
+}
+footer p a {
+    color: black;
+}
+.menuAbsolute{
+padding-top: 9vh;
+}
+
+a:-webkit-any-link.carousel-control-next {
+
+    cursor: e-resize;
+
+}
+a:-webkit-any-link.carousel-control-prev {
+
+    cursor: w-resize;
+
+}
+.menuAbsolute a{
+    cursor:pointer;
+}
+
+.pageOver{
+    padding-left: 4vh;
+}
+.js-scrollTo{
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.js-scrollTo:hover{
+    padding-left: 4vh;
+}
