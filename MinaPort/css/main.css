@@ -1,7 +1,24 @@
 * {
   box-sizing: none;
-  /*cursor: none;*/
+ 
 }
+
+.circle {
+	position: absolute;
+    background: #1d2124;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  z-index: 10;
+}
+.circle:last-child {
+	position: absolute;
+    background: #1d2124;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 #defaultCanvas0 {
   position: fixed;
 }
@@ -15,6 +32,7 @@ body {
   /* min-height: 100vh; */
   flex-direction: row;
   list-style-type: none;
+      cursor: none;
 }
 
 /*.colonne-1 {
@@ -117,13 +135,15 @@ footer p a {
 .menuAbsolute {
   padding-top: 9vh;
 }
-
+a{
+    cursor: none;
+}
 a:-webkit-any-link.carousel-control-next {
-  /*cursor: e-resize;*/
+  
   z-index: 20;
 }
 a:-webkit-any-link.carousel-control-prev {
-  /*cursor: w-resize;*/
+
   z-index: 20;
 }
 .menuAbsolute a {
@@ -153,107 +173,7 @@ a:hover {
   text-decoration: none;
 }
 
-@media (max-width: 425px),
-  only screen and (max-device-width: 640px) and (orientation: landscape) {
-  
-  footer {
-    overflow: hidden;
-  }
-  #computer {
-    display: none;
-  }
-  #mobile {
-    display: list-item;
-  }
-  .carousel-inner {
-    padding-top: 5vh;
-  }
-  .mobileTransition .carousel-item {
-    display: block;
-    margin-bottom: 2vh;
-  }
-  .imgFull {
-    width: 100% !important;
-  }
 
-  .colonne-2 {
-    display: flex;
-    flex-direction: initial;
-    flex: 6;
-    position: absolute;
-  }
-  .colonne-1 {
-    flex: 2;
-    z-index: 10;
-  }
-  footer p {
-    padding-right: 0;
-  }
-  #c1Content li a {
-    color: black;
-    font-size: 2em;
-  }
-  #mobileNav {
-    display: block;
-    right: 1em;
-    position: fixed;
-    font-weight: 1.4em;
-    z-index: 30;
-  }
-
-  #mobileNav a {
-    line-height: 1.2;
-    text-transform: uppercase;
-    font-weight: 300;
-    color: black;
-    margin-left: 1.2vh;
-  }
-  .menuAbsolute li:first-child {
-    padding-top: 0;
-  }
-  .menuAbsolute {
-    padding-top: 5vh;
-  }
-  .bigTitle h1 {
-    line-height: 1.5;
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 300;
-  }
-  .bigTitle {
-    font-weight: 1.4em;
-  }
-  #homePicture  {
-    display: none;
-  }
-  #c1Content li {
-    line-height: 1.1;
-  }
-  .mobileTransition {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-  }
-  .mobileAnime {
-    transform: translateX(120%);
-    max-height: 90vh;
-  }
-  .mobileAnimeMenu {
-    transform: translateX(-120%);
-  }
-  .mobileAnimeBack {
-    transform: translateX(50%);
-  }
-  .content {
-    position: absolute;
-    align-items: baseline;
-  }
-  a:-webkit-any-link.carousel-control-next,
-  a:-webkit-any-link.carousel-control-prev {
-    display: none;
-  }
-}
 /* petit laptop*/
 @media (max-width: 900px) and (min-width: 425px) {
   .imgFull {
