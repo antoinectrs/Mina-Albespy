@@ -1,22 +1,22 @@
 * {
   box-sizing: none;
- 
 }
 
+
 .circle {
-	position: absolute;
-    background: #1d2124;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+  position: absolute;
+  background: #1d2124;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
   z-index: 10;
 }
 .circle:last-child {
-	position: absolute;
-    background: #1d2124;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+  position: absolute;
+  background: #1d2124;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 #defaultCanvas0 {
@@ -32,7 +32,7 @@ body {
   /* min-height: 100vh; */
   flex-direction: row;
   list-style-type: none;
-      cursor: none;
+  cursor: none;
 }
 
 /*.colonne-1 {
@@ -72,6 +72,7 @@ body {
 .content > article {
   flex: 3;
   min-height: 60vh;
+  overflow: initial;
 }
 
 /* .content>aside {
@@ -98,6 +99,23 @@ aside {
 .carousel-control-next,
 .carousel-control-prev {
   width: 50%;
+}
+.verticalControlUp {
+  top: -20vh;
+  width: 100%;
+  height: 20vh;
+  position: absolute;
+  bottom: 0;
+  z-index: 120;
+  border: solid black;
+}
+.verticalControlDown {
+  width: 100%;
+  height: 20vh;
+  position: absolute;
+  bottom: -20vh;
+  z-index: 120;
+   border: solid black;
 }
 #homePicture {
   display: flex;
@@ -135,23 +153,23 @@ footer p a {
 .menuAbsolute {
   padding-top: 9vh;
 }
-a{
-    cursor: none;
+a {
+  cursor: none;
 }
 a:-webkit-any-link.carousel-control-next {
-  
   z-index: 20;
 }
 a:-webkit-any-link.carousel-control-prev {
-
   z-index: 20;
 }
 .menuAbsolute a {
   /*cursor: pointer;*/
 }
+/*
 .content > article {
   overflow: hidden;
 }
+*/
 .pageOver {
   padding-left: 4vh;
 }
@@ -172,7 +190,6 @@ a:-webkit-any-link.carousel-control-prev {
 a:hover {
   text-decoration: none;
 }
-
 
 /* petit laptop*/
 @media (max-width: 900px) and (min-width: 425px) {
