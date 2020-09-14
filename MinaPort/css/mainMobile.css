@@ -1,16 +1,28 @@
 @media (max-width: 425px),
   only screen and (max-device-width: 640px) and (orientation: landscape) {
-   #mobile #marginMenu {
-          padding-top: 6vh;
+  .js-phoneMenu li a img {
+    display: block;
+  }
+  #mobile #marginMenu {
+    padding-top: 5vh;
+  }
+  .js-phoneMenu li a {
+  }
+  .titleProjetMobile {
+    justify-content: start;
+    display: flex;
+  }
+    .titleProjetMobile div:first-child{
+          margin-right: 1vh;
     }
-  .js-phoneMenu li a div:first-child {
+  /* .js-phoneMenu li a div:first-child {
     justify-content: flex-start;
     display: flex;
   }
   .js-phoneMenu li a div:last-child {
     justify-content: flex-end;
     display: flex;
-  }
+  }*/
   .colonne-1 #c1Content {
     position: initial;
   }
@@ -60,10 +72,11 @@
   }
   #c1Content .bigTitle h1 {
     position: fixed;
-    }
+  }
   #c1Content li a {
     color: black;
-    font-size: 11vh;
+    font-size: 5vh;
+    font-weight: 300;
   }
   #mobileNav {
     display: block;

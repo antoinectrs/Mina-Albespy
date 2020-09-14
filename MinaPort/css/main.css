@@ -2,7 +2,9 @@
   box-sizing: none;
 }
 
-
+.js-phoneMenu li a img{
+      display:none;
+    }
 .circle {
   position: absolute;
    border: solid black;
@@ -202,6 +204,9 @@ a:hover {
 
 /* petit laptop*/
 @media (max-width: 900px) and (min-width: 425px) {
+  js-phoneMenu li a img{
+      display:none;
+    }
   .imgFull {
     height: 40vh;
     width: auto;
@@ -217,6 +222,9 @@ a:hover {
 }
 /* grand laptop*/
 @media (min-width: 900px) {
+  js-phoneMenu li a img{
+      display:none;
+    }
   .imgFull {
     height: 65vh;
   }
