@@ -1,6 +1,28 @@
 @media (max-width: 425px),
   only screen and (max-device-width: 640px) and (orientation: landscape) {
-  
+   #mobile #marginMenu {
+          padding-top: 6vh;
+    }
+  .js-phoneMenu li a div:first-child {
+    justify-content: flex-start;
+    display: flex;
+  }
+  .js-phoneMenu li a div:last-child {
+    justify-content: flex-end;
+    display: flex;
+  }
+  .colonne-1 #c1Content {
+    position: initial;
+  }
+  body {
+    width: 100%;
+  }
+  .verticalControl {
+    display: none;
+  }
+  .circle {
+    display: none;
+  }
   footer {
     overflow: hidden;
   }
@@ -29,14 +51,19 @@
   }
   .colonne-1 {
     flex: 2;
+    width: 100%;
     z-index: 10;
+    /*position: fixed; */
   }
   footer p {
     padding-right: 0;
   }
+  #c1Content .bigTitle h1 {
+    position: fixed;
+    }
   #c1Content li a {
     color: black;
-   font-size: 9vh;
+    font-size: 11vh;
   }
   #mobileNav {
     display: block;
@@ -57,7 +84,7 @@
     padding-top: 0;
   }
   .menuAbsolute {
-    padding-top: 5vh;
+    padding-top: 0;
   }
   .bigTitle h1 {
     line-height: 1.5;
@@ -68,11 +95,12 @@
   .bigTitle {
     font-weight: 1.4em;
   }
-  #homePicture  {
+  .colonne-2 #homePicture {
     display: none;
   }
   #c1Content li {
     line-height: 1.1;
+    border-top: solid 1px;
   }
   .mobileTransition {
     -webkit-transition: all 0.3s ease;

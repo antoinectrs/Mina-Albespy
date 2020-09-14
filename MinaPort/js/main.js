@@ -1,3 +1,4 @@
+
 let gap = 0;
 let gapV = 0;
 var link;
@@ -14,11 +15,18 @@ $(document).ready(function() //When the page is ready, load function
        
       let splitted = link.split("-");
       let numberLink = splitted[1];
-       numberLink= numberLink-1;
+
+         let destination = "#pageOver-0";
        
-      let destination = splitted[0] + "-" + numberLink;
-     destination = $(destination).attr("href");
-      console.log(link, destination);
+     
+       numberLink= numberLink-1;
+    destination = splitted[0] + "-" + numberLink;
+
+         console.log("link: "+link+" splitted: "+splitted+" numberLink: "+numberLink+" destination: "+destination);
+        destination = $(destination).attr("href");
+      
+       
+ 
       var speed = 750; // Durée de l'animation (en ms)
       $("html, body").animate({ scrollTop: $(destination).offset().top }, speed); // Go
       return false;
@@ -116,10 +124,12 @@ $(document).ready(function() //When the page is ready, load function
   });
 
   $("a:-webkit-any-link.carousel-control-next").mouseenter(function() {
-    gap = 5;
+    gap = 6;
+     $("#circleB").css("transform", "rotate(-90deg)");
   });
   $("a:-webkit-any-link.carousel-control-prev").mouseenter(function() {
-    gap = -5;
+    gap = -6;
+     $("#circleB").css("transform", "rotate(90deg)");
   });
   $("a:-webkit-any-link.carousel-control-prev").mouseout(function() {
     gap = 0;
@@ -128,18 +138,21 @@ $(document).ready(function() //When the page is ready, load function
     gap = 0;
   });
   $(".verticalControlUp").mouseenter(function() {
-    gapV = -5;
+    gapV = -6;
     gap = 0.1;
+     $("#circleB").css("transform", "rotate(180deg)");
     // console.log(gapV);
   });
   $(".verticalControlUp").mouseout(function() {
     gapV = 0;
     gap = 0;
+   
     // console.log(gapV);
   });
   $(".verticalControlDown").mouseenter(function() {
-    gapV = 5;
+    gapV = 6;
     gap = 0.1;
+     $("#circleB").css("transform", "rotate(0deg)");
     //  console.log(gapV);
   });
   $(".verticalControlDown").mouseout(function() {
