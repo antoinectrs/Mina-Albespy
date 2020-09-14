@@ -12,8 +12,10 @@ $(document).ready(function() //When the page is ready, load function
    swipedetect(el, i, function(swipedir){
     // swipedir contains either "none", "left", "right", "top", or "down"
   //  el.innerHTML = 'Swiped <span style="color:yellow;margin: 0 5px;">' + swipedir +'</span>';
-  console.log(i);
-   $(".js-phoneMenu a").css("display", "none");
+     if(swipedir == "right"){
+        $(".js-phoneMenu a").css("display", "none");
+     }
+  
   //console.log(el[0])
 });
 }
