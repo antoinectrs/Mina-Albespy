@@ -2,42 +2,69 @@ let gap = 0;
 let gapV = 0;
 var link;
 let phonePage;
+let phoneSwipe;
+let phoneBool = false;
 $(document).ready(function() //When the page is ready, load function
 {
   //var el = document.getElementById('swipezone');
   let el = document.getElementsByClassName("swipezone");
   //let el = el1[0];
   //let i = 1;
+  
   for (let i = 0; i < el.length; i++) {
-    swipedetect(el, i, function(swipedir) {
-       let phoneSwipe = $(".js-phoneMenu a").attr("class"); // Page cible
+    
+    
+    
+    
+      swipedetect(el, i, function(swipedir) {
       // swipedir contains either "none", "left", "right", "top", or "down"
-      if (swipedir == "right") {
+      if (swipedir == "right" || swipedir == "left" ) {
+        phoneSwipe = el[i].id;
         // Au clic sur un élément
-       console.log(phoneSwipe)
-       
-       // phoneBool = !phoneBool;
-        //if (phoneBool == true) {
-          
-        // $("." + phoneSwipe + " .mobileTransition").removeClass("mobileAnime");
-        //  $("#mobile").addClass("mobileAnimeMenu");
-        //  $("#mobileNav ").removeClass("mobileAnimeBack");
-        //  $("#mobileNav a:first-child").css("display", "none");
-        //} else {
-          // $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
-          // $("#mobile").removeClass("mobileAnimeMenu");
-       // }
-        //  var speed = 750; // Durée de l'animation (en ms)
-        //$("html, body").animate({ scrollTop: $(page).offset().top }, speed); // Go
+
+        phoneBool = !phoneBool;
+         console.log(phoneBool);
+        if (phoneBool == true) {
+          $("." + phoneSwipe + " .mobileTransition").removeClass("mobileAnime");
+          $("#mobile").addClass("mobileAnimeMenu");
+          $("#mobileNav ").removeClass("mobileAnimeBack");
+          $("#mobileNav a:first-child").css("display", "none");
+        } else {
+          $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
+          $("#mobile").removeClass("mobileAnimeMenu");
+        }
         return false;
       }
+    });
+    
+    swipedetect(el, i, function(swipedir) {
+      // swipedir contains either "none", "left", "right", "top", or "down"
+      if (swipedir == "right" || swipedir == "left" ) {
+        phoneSwipe = el[i].id;
+        // Au clic sur un élément
 
-      //console.log(el[0])
+        phoneBool = !phoneBool;
+         console.log(phoneBool);
+        if (phoneBool == true) {
+          $("." + phoneSwipe + " .mobileTransition").removeClass("mobileAnime");
+          $("#mobile").addClass("mobileAnimeMenu");
+          $("#mobileNav ").removeClass("mobileAnimeBack");
+          $("#mobileNav a:first-child").css("display", "none");
+        } else {
+          $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
+          $("#mobile").removeClass("mobileAnimeMenu");
+        }
+        return false;
+      }
     });
   }
 
+     
+ 
+ 
+
   let isMobile;
-  let phoneBool = false;
+
   if (window.matchMedia("(min-width: 768px)").matches) {
     isMobile = false;
   } else {
@@ -144,14 +171,14 @@ $(document).ready(function() //When the page is ready, load function
       $("#mobileNav ").removeClass("mobileAnimeBack");
       //  $("#mobileNav a:first-child").css( "display", "none" );
     } else {
-      // $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
-      // $("#mobile").removeClass("mobileAnimeMenu");
+      $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
+      $("#mobile").removeClass("mobileAnimeMenu");
     }
     return false;
   });
   //$(".js-phoneMenu a").on("click", function() {
   //  // Au clic sur un élément
-   
+
   //  phonePage = $(this).attr("class"); // Page cible
   //  phoneBool = !phoneBool;
   //  if (phoneBool == true) {
@@ -170,10 +197,11 @@ $(document).ready(function() //When the page is ready, load function
   //});
 
   $("#mobileNav #back").on("click", function() {
-    $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
+    $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
     $("#mobile").removeClass("mobileAnimeMenu");
     $("#mobileNav").addClass("mobileAnimeBack");
     $("#mobileNav a:first-child").css("display", "initial");
+    phoneBool = !phoneBool;
 
     // Page cible
     var speed = 0; // Durée de l'animation (en ms)
@@ -255,7 +283,7 @@ function swipedetect(el, i, callback) {
     startY,
     distX,
     distY,
-    threshold = 150, //required min distance traveled to be considered swipe
+    threshold = 60, //required min distance traveled to be considered swipe
     restraint = 100, // maximum distance allowed at the same time in perpendicular direction
     allowedTime = 300, // maximum time allowed to travel that distance
     elapsedTime,
@@ -272,7 +300,7 @@ function swipedetect(el, i, callback) {
       startX = touchobj.pageX;
       startY = touchobj.pageY;
       startTime = new Date().getTime(); // record time when finger first makes contact with surface
-      e.preventDefault();
+      //e.preventDefault();
     },
     false
   );
@@ -280,7 +308,7 @@ function swipedetect(el, i, callback) {
   touchsurface.addEventListener(
     "touchmove",
     function(e) {
-      e.preventDefault(); // prevent scrolling when inside DIV
+     // e.preventDefault(); // prevent scrolling when inside DIV
     },
     false
   );
@@ -306,7 +334,7 @@ function swipedetect(el, i, callback) {
         }
       }
       handleswipe(swipedir);
-      e.preventDefault();
+     // e.preventDefault();
     },
     false
   );
