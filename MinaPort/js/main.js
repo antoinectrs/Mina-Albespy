@@ -1,28 +1,43 @@
 let gap = 0;
 let gapV = 0;
 var link;
+let phonePage;
 $(document).ready(function() //When the page is ready, load function
 {
   //var el = document.getElementById('swipezone');
   let el = document.getElementsByClassName("swipezone");
   //let el = el1[0];
   //let i = 1;
-  for(let i = 0; i < el.length; i++)
-{
-   swipedetect(el, i, function(swipedir){
-    // swipedir contains either "none", "left", "right", "top", or "down"
-  //  el.innerHTML = 'Swiped <span style="color:yellow;margin: 0 5px;">' + swipedir +'</span>';
-     if(swipedir == "right"){
-        $(".js-phoneMenu a").css("display", "none");
-     }
-  
-  //console.log(el[0])
-});
-}
+  for (let i = 0; i < el.length; i++) {
+    swipedetect(el, i, function(swipedir) {
+       let phoneSwipe = $(".js-phoneMenu a").attr("class"); // Page cible
+      // swipedir contains either "none", "left", "right", "top", or "down"
+      if (swipedir == "right") {
+        // Au clic sur un élément
+       console.log(phoneSwipe)
+       
+       // phoneBool = !phoneBool;
+        //if (phoneBool == true) {
+          
+        // $("." + phoneSwipe + " .mobileTransition").removeClass("mobileAnime");
+        //  $("#mobile").addClass("mobileAnimeMenu");
+        //  $("#mobileNav ").removeClass("mobileAnimeBack");
+        //  $("#mobileNav a:first-child").css("display", "none");
+        //} else {
+          // $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
+          // $("#mobile").removeClass("mobileAnimeMenu");
+       // }
+        //  var speed = 750; // Durée de l'animation (en ms)
+        //$("html, body").animate({ scrollTop: $(page).offset().top }, speed); // Go
+        return false;
+      }
 
-  
+      //console.log(el[0])
+    });
+  }
+
   let isMobile;
-   let phoneBool = false;
+  let phoneBool = false;
   if (window.matchMedia("(min-width: 768px)").matches) {
     isMobile = false;
   } else {
@@ -38,16 +53,16 @@ $(document).ready(function() //When the page is ready, load function
       numberLink = numberLink - 1;
       destination = splitted[0] + "-" + numberLink;
 
-     // console.log(
-     //   "link: " +
-     //     link +
-     //     " splitted: " +
-     //     splitted +
-     //     " numberLink: " +
-     //     numberLink +
-     //     " destination: " +
-     //     destination
-     // );
+      // console.log(
+      //   "link: " +
+      //     link +
+      //     " splitted: " +
+      //     splitted +
+      //     " numberLink: " +
+      //     numberLink +
+      //     " destination: " +
+      //     destination
+      // );
       destination = $(destination).attr("href");
 
       var speed = 750; // Durée de l'animation (en ms)
@@ -86,7 +101,6 @@ $(document).ready(function() //When the page is ready, load function
       function() {
         link = $(this).attr("href");
         $(link).addClass("pageOver");
-
         // debut crantage du scroll
 
         // var page = "#" + $(this).attr("id"); // Page cible
@@ -108,7 +122,7 @@ $(document).ready(function() //When the page is ready, load function
 
       // Callback function references the event target and adds the 'swipe' class to it
       function swipeHandler(event) {
-      $(".js-phoneMenu a").css("display", "none");
+        $(".js-phoneMenu a").css("display", "none");
       }
     });
   }
@@ -121,9 +135,6 @@ $(document).ready(function() //When the page is ready, load function
     return false;
   });
 
- 
-
-  let phonePage;
   $("#about").on("click", function() {
     phonePage = $(this).attr("class"); // Page cible
     phoneBool = !phoneBool;
@@ -140,6 +151,7 @@ $(document).ready(function() //When the page is ready, load function
   });
   //$(".js-phoneMenu a").on("click", function() {
   //  // Au clic sur un élément
+   
   //  phonePage = $(this).attr("class"); // Page cible
   //  phoneBool = !phoneBool;
   //  if (phoneBool == true) {
@@ -236,9 +248,8 @@ setInterval(function() {
 function lerp(start, end, amt) {
   return (1 - amt) * start + amt * end;
 }
-function swipedetect(el, i, callback){
-  
-    var touchsurface = el[i],
+function swipedetect(el, i, callback) {
+  var touchsurface = el[i],
     swipedir,
     startX,
     startY,
@@ -249,37 +260,54 @@ function swipedetect(el, i, callback){
     allowedTime = 300, // maximum time allowed to travel that distance
     elapsedTime,
     startTime,
-    handleswipe = callback || function(swipedir){}
-  
-    touchsurface.addEventListener('touchstart', function(e){
-        var touchobj = e.changedTouches[0]
-        swipedir = 'none'
-        distX = 0;
+    handleswipe = callback || function(swipedir) {};
+
+  touchsurface.addEventListener(
+    "touchstart",
+    function(e) {
+      var touchobj = e.changedTouches[0];
+      swipedir = "none";
+      distX = 0;
       distY = 0;
-        startX = touchobj.pageX
-        startY = touchobj.pageY
-        startTime = new Date().getTime() // record time when finger first makes contact with surface
-        e.preventDefault()
-    }, false)
-  
-    touchsurface.addEventListener('touchmove', function(e){
-        e.preventDefault() // prevent scrolling when inside DIV
-    }, false)
-  
-    touchsurface.addEventListener('touchend', function(e){
-        var touchobj = e.changedTouches[0]
-        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-        elapsedTime = new Date().getTime() - startTime // get time elapsed
-        if (elapsedTime <= allowedTime){ // first condition for awipe met
-            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
-                swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-            }
-            else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
-                swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
-            }
+      startX = touchobj.pageX;
+      startY = touchobj.pageY;
+      startTime = new Date().getTime(); // record time when finger first makes contact with surface
+      e.preventDefault();
+    },
+    false
+  );
+
+  touchsurface.addEventListener(
+    "touchmove",
+    function(e) {
+      e.preventDefault(); // prevent scrolling when inside DIV
+    },
+    false
+  );
+
+  touchsurface.addEventListener(
+    "touchend",
+    function(e) {
+      var touchobj = e.changedTouches[0];
+      distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
+      distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
+      elapsedTime = new Date().getTime() - startTime; // get time elapsed
+      if (elapsedTime <= allowedTime) {
+        // first condition for awipe met
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+          // 2nd condition for horizontal swipe met
+          swipedir = distX < 0 ? "left" : "right"; // if dist traveled is negative, it indicates left swipe
+        } else if (
+          Math.abs(distY) >= threshold &&
+          Math.abs(distX) <= restraint
+        ) {
+          // 2nd condition for vertical swipe met
+          swipedir = distY < 0 ? "up" : "down"; // if dist traveled is negative, it indicates up swipe
         }
-        handleswipe(swipedir)
-        e.preventDefault()
-    }, false)
+      }
+      handleswipe(swipedir);
+      e.preventDefault();
+    },
+    false
+  );
 }
