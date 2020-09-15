@@ -12,10 +12,6 @@ $(document).ready(function() //When the page is ready, load function
   //let i = 1;
   
   for (let i = 0; i < el.length; i++) {
-    
-    
-    
-    
       swipedetect(el, i, function(swipedir) {
       // swipedir contains either "none", "left", "right", "top", or "down"
       if (swipedir == "right" || swipedir == "left" ) {
@@ -37,26 +33,7 @@ $(document).ready(function() //When the page is ready, load function
       }
     });
     
-    swipedetect(el, i, function(swipedir) {
-      // swipedir contains either "none", "left", "right", "top", or "down"
-      if (swipedir == "right" || swipedir == "left" ) {
-        phoneSwipe = el[i].id;
-        // Au clic sur un élément
-
-        phoneBool = !phoneBool;
-         console.log(phoneBool);
-        if (phoneBool == true) {
-          $("." + phoneSwipe + " .mobileTransition").removeClass("mobileAnime");
-          $("#mobile").addClass("mobileAnimeMenu");
-          $("#mobileNav ").removeClass("mobileAnimeBack");
-          $("#mobileNav a:first-child").css("display", "none");
-        } else {
-          $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
-          $("#mobile").removeClass("mobileAnimeMenu");
-        }
-        return false;
-      }
-    });
+  
   }
 
      
