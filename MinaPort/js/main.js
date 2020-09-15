@@ -194,6 +194,7 @@ $(document).ready(function() //When the page is ready, load function
   //});
 
   $("#mobileNav #back").on("click", function() {
+     $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
     $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
     $("#mobile").removeClass("mobileAnimeMenu");
     $("#mobileNav").addClass("mobileAnimeBack");

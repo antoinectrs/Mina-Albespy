@@ -38,6 +38,9 @@
   footer {
     overflow: hidden;
   }
+  footer div {
+    padding-top: 5vh;
+  }
   #computer {
     display: none;
   }
