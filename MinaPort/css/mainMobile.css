@@ -1,5 +1,9 @@
 @media (max-width: 425px),
   only screen and (max-device-width: 640px) and (orientation: landscape) {
+  .descriptionMobile {
+    display:block;
+    line-height: 1.2em;
+  }
   .js-phoneMenu li a img {
     display: block;
   }
@@ -78,6 +82,10 @@
   #c1Content .bigTitle h1 {
     position: fixed;
     z-index: 200;
+    background: #ffffff;
+    width: 100%;
+    top: 0;
+    padding-top: 5%;
   }
   #c1Content li a {
     color: black;
@@ -89,7 +97,7 @@
     right: 1em;
     position: fixed;
     font-weight: 1.4em;
-    z-index: 30;
+    z-index: 210;
   }
 
   #mobileNav a {

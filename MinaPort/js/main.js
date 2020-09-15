@@ -36,7 +36,7 @@ $(document).ready(function() //When the page is ready, load function
         }
         //var page = $(".pageDetector").attr("id"); // Page cible
         //console.log(page);
-        var speed = 250; // Durée de l'animation (en ms)
+        var speed = 0; // Durée de l'animation (en ms)
         $("html, body").animate({ scrollTop: $("#page-0").offset().top }, speed); // Go
         return false;
       }

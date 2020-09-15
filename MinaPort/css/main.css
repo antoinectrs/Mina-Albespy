@@ -1,7 +1,9 @@
 * {
   box-sizing: none;
 }
-
+.descriptionMobile{
+  display:none;
+}
 .js-phoneMenu li a img{
       display:none;
     }
