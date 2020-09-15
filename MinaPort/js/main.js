@@ -34,17 +34,30 @@ $(document).ready(function() //When the page is ready, load function
           $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
           $("#mobile").removeClass("mobileAnimeMenu");
         }
+        //var page = $(".pageDetector").attr("id"); // Page cible
+        //console.log(page);
+        var speed = 250; // Durée de l'animation (en ms)
+        $("html, body").animate({ scrollTop: $("#page-0").offset().top }, speed); // Go
         return false;
       }
     });
   }
 
   swipedetect(elBack, 0, function(swipedir) {
-    console.log("test");
-    $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
-    $("#mobile").removeClass("mobileAnimeMenu");
-    $(".colonne-1").addClass("colonne-1zIndex");
-    phoneBool = !phoneBool;
+    if (swipedir == "right" || swipedir == "left") {
+      console.log("test");
+      $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
+      $("#mobile").removeClass("mobileAnimeMenu");
+      $(".colonne-1").addClass("colonne-1zIndex");
+
+      $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
+      $("#mobile").removeClass("mobileAnimeMenu");
+      $("#mobileNav").addClass("mobileAnimeBack");
+      $("#mobileNav a:first-child").css("display", "initial");
+
+      phoneBool = !phoneBool;
+      // return false;
+    }
   });
 
   let isMobile;
@@ -185,6 +198,7 @@ $(document).ready(function() //When the page is ready, load function
     $("#mobile").removeClass("mobileAnimeMenu");
     $("#mobileNav").addClass("mobileAnimeBack");
     $("#mobileNav a:first-child").css("display", "initial");
+
     phoneBool = !phoneBool;
 
     // Page cible
