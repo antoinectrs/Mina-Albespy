@@ -12,9 +12,9 @@
     justify-content: start;
     display: flex;
   }
-    .titleProjetMobile div:first-child{
-          margin-right: 1vh;
-    }
+  .titleProjetMobile div:first-child {
+    margin-right: 1vh;
+  }
   /* .js-phoneMenu li a div:first-child {
     justify-content: flex-start;
     display: flex;
@@ -64,14 +64,17 @@
   .colonne-1 {
     flex: 2;
     width: 100%;
+  }
+  /* A CHANGER ------------------------------------------------- */
+  .colonne-1zIndex {
     z-index: 10;
-    /*position: fixed; */
   }
   footer p {
     padding-right: 0;
   }
   #c1Content .bigTitle h1 {
     position: fixed;
+    z-index: 200;
   }
   #c1Content li a {
     color: black;

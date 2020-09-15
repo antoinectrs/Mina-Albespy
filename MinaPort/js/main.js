@@ -8,23 +8,28 @@ $(document).ready(function() //When the page is ready, load function
 {
   //var el = document.getElementById('swipezone');
   let el = document.getElementsByClassName("swipezone");
+  let elBack = document.getElementsByClassName("colonne-2");
+
   //let el = el1[0];
   //let i = 1;
-  
+
   for (let i = 0; i < el.length; i++) {
-      swipedetect(el, i, function(swipedir) {
+    swipedetect(el, i, function(swipedir) {
       // swipedir contains either "none", "left", "right", "top", or "down"
-      if (swipedir == "right" || swipedir == "left" ) {
+      if (swipedir == "right" || swipedir == "left") {
         phoneSwipe = el[i].id;
         // Au clic sur un élément
 
         phoneBool = !phoneBool;
-         console.log(phoneBool);
+        console.log(phoneBool);
         if (phoneBool == true) {
           $("." + phoneSwipe + " .mobileTransition").removeClass("mobileAnime");
           $("#mobile").addClass("mobileAnimeMenu");
           $("#mobileNav ").removeClass("mobileAnimeBack");
           $("#mobileNav a:first-child").css("display", "none");
+
+          //Changer le z-index pour debloquer le swipeBack
+          $(".colonne-1").removeClass("colonne-1zIndex");
         } else {
           $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
           $("#mobile").removeClass("mobileAnimeMenu");
@@ -32,13 +37,15 @@ $(document).ready(function() //When the page is ready, load function
         return false;
       }
     });
-    
-  
   }
 
-     
- 
- 
+  swipedetect(elBack, 0, function(swipedir) {
+    console.log("test");
+    $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
+    $("#mobile").removeClass("mobileAnimeMenu");
+    $(".colonne-1").addClass("colonne-1zIndex");
+    phoneBool = !phoneBool;
+  });
 
   let isMobile;
 
@@ -261,7 +268,7 @@ function swipedetect(el, i, callback) {
     distX,
     distY,
     threshold = 60, //required min distance traveled to be considered swipe
-    restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+    restraint = 150, // maximum distance allowed at the same time in perpendicular direction
     allowedTime = 300, // maximum time allowed to travel that distance
     elapsedTime,
     startTime,
@@ -285,7 +292,7 @@ function swipedetect(el, i, callback) {
   touchsurface.addEventListener(
     "touchmove",
     function(e) {
-     // e.preventDefault(); // prevent scrolling when inside DIV
+      // e.preventDefault(); // prevent scrolling when inside DIV
     },
     false
   );
@@ -311,7 +318,7 @@ function swipedetect(el, i, callback) {
         }
       }
       handleswipe(swipedir);
-     // e.preventDefault();
+      // e.preventDefault();
     },
     false
   );
