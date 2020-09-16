@@ -88,8 +88,8 @@
     padding-top: 5%;
   }
   #c1Content li a {
-    color: black;
-    font-size: 5vh;
+    color: #333333;
+       font-size: 1.5em;
     font-weight: 300;
   }
   #mobileNav {
@@ -127,7 +127,7 @@
   }
   #c1Content li {
     line-height: 1.1;
-    border-top: solid 1px;
+   /* border-top: solid 1px;*/
   }
   .mobileTransition {
     -webkit-transition: all 0.2s ease;
