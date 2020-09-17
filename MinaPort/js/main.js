@@ -37,7 +37,10 @@ $(document).ready(function() //When the page is ready, load function
         //var page = $(".pageDetector").attr("id"); // Page cible
         //console.log(page);
         var speed = 0; // Durée de l'animation (en ms)
-        $("html, body").animate({ scrollTop: $("#page-0").offset().top }, speed); // Go
+        $("html, body").animate(
+          { scrollTop: $("#page-0").offset().top },
+          speed
+        ); // Go
         return false;
       }
     });
@@ -173,28 +176,42 @@ $(document).ready(function() //When the page is ready, load function
     }
     return false;
   });
+  
+  //CLICK BUG
   //$(".js-phoneMenu a").on("click", function() {
-  //  // Au clic sur un élément
-
-  //  phonePage = $(this).attr("class"); // Page cible
-  //  phoneBool = !phoneBool;
-  //  if (phoneBool == true) {
-  //    // console.log("." + phonePage + " .mobileTransition");
-  //    $("." + phonePage + " .mobileTransition").removeClass("mobileAnime");
-  //    $("#mobile").addClass("mobileAnimeMenu");
-  //    $("#mobileNav ").removeClass("mobileAnimeBack");
-  //    $("#mobileNav a:first-child").css("display", "none");
-  //  } else {
-  //    $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
-  //    $("#mobile").removeClass("mobileAnimeMenu");
-  //  }
-  //  //  var speed = 750; // Durée de l'animation (en ms)
-  //  //$("html, body").animate({ scrollTop: $(page).offset().top }, speed); // Go
+  //  //  // Au clic sur un élément
+//
+  //    phonePage = $(this).attr("class"); // Page cible
+  //    phoneBool = !phoneBool;
+  //    if (phoneBool == true) {
+  //      // console.log("." + phonePage + " .mobileTransition");
+  //      $("." + phonePage + " .mobileTransition").removeClass("mobileAnime");
+  //      $("." + phoneSwipe + " .mobileTransition").removeClass("mobileAnime");
+  //      $("#mobile").addClass("mobileAnimeMenu");
+  //      $("#mobileNav ").removeClass("mobileAnimeBack");
+  //      $("#mobileNav a:first-child").css("display", "none");
+  //    } else {
+  //      $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
+  //      $("#mobile").removeClass("mobileAnimeMenu");
+  //    }
+  //  var speed = 0; // Durée de l'animation (en ms)
+  //  $("html, body").animate({ scrollTop: $("#page-0").offset().top }, speed); //
   //  return false;
   //});
-
+  //$(".colonne-2").on("click"), function(){
+  //   if (phoneBool == false) {
+  //    $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
+  //  $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
+  //  $("#mobile").removeClass("mobileAnimeMenu");
+  //  $("#mobileNav").addClass("mobileAnimeBack");
+  //  $("#mobileNav a:first-child").css("display", "initial");
+//
+  //  phoneBool = !phoneBool;
+  //   }
+  //}
+//
   $("#mobileNav #back").on("click", function() {
-     $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
+    $("." + phonePage + " .mobileTransition").addClass("mobileAnime");
     $("." + phoneSwipe + " .mobileTransition").addClass("mobileAnime");
     $("#mobile").removeClass("mobileAnimeMenu");
     $("#mobileNav").addClass("mobileAnimeBack");
