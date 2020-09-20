@@ -1,0 +1,156 @@
+@media (max-width: 425px),
+  only screen and (max-device-width: 640px) and (orientation: landscape) {
+  .descriptionMobile {
+    display:block;
+    line-height: 1.2em;
+  }
+  .js-phoneMenu li a img {
+    display: block;
+  }
+  #mobile #marginMenu {
+    padding-top: 5vh;
+  }
+  .js-phoneMenu li a {
+  }
+  .titleProjetMobile {
+    justify-content: start;
+    display: flex;
+  }
+  .titleProjetMobile div:first-child {
+    margin-right: 1vh;
+  }
+  /* .js-phoneMenu li a div:first-child {
+    justify-content: flex-start;
+    display: flex;
+  }
+  .js-phoneMenu li a div:last-child {
+    justify-content: flex-end;
+    display: flex;
+  }*/
+  .colonne-1 #c1Content {
+    position: initial;
+  }
+  body {
+    width: 100%;
+  }
+  .verticalControl {
+    display: none;
+  }
+  .circle {
+    display: none;
+  }
+  footer {
+    overflow: hidden;
+  }
+  footer div {
+    padding-top: 5vh;
+  }
+  #computer {
+    display: none;
+  }
+  #mobile {
+    display: list-item;
+  }
+  .carousel-inner {
+    padding-top: 5vh;
+  }
+  .mobileTransition .carousel-item {
+    display: block;
+    margin-bottom: 2vh;
+  }
+  .imgFull {
+    width: 100% !important;
+  }
+
+  .colonne-2 {
+    display: flex;
+    flex-direction: initial;
+    flex: 6;
+    position: absolute;
+  }
+  .colonne-1 {
+    flex: 2;
+    width: 100%;
+  }
+  /* A CHANGER ------------------------------------------------- */
+  .colonne-1zIndex {
+    z-index: 10;
+  }
+  footer p {
+    padding-right: 0;
+  }
+  #c1Content .bigTitle h1 {
+    position: fixed;
+    z-index: 200;
+    background: #ffffff;
+    width: 100%;
+    top: 0;
+    padding-top: 5%;
+  }
+  #c1Content li a {
+    color: #333333;
+       font-size: 1.5em;
+    font-weight: 300;
+  }
+  #mobileNav {
+    display: block;
+    right: 1em;
+    position: fixed;
+    font-weight: 1.4em;
+    z-index: 210;
+  }
+
+  #mobileNav a {
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: black;
+    margin-left: 1.2vh;
+  }
+  .menuAbsolute li:first-child {
+    padding-top: 0;
+  }
+  .menuAbsolute {
+    padding-top: 0;
+  }
+  .bigTitle h1 {
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+  .bigTitle {
+    font-weight: 1.4em;
+  }
+  .colonne-2 #homePicture {
+    display: none;
+  }
+  #c1Content li {
+    line-height: 1.1;
+   /* border-top: solid 1px;*/
+  }
+  .mobileTransition {
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  .mobileAnime {
+    transform: translateX(120%);
+    max-height: 90vh;
+  }
+  .mobileAnimeMenu {
+    transform: translateX(-120%);
+  }
+  .mobileAnimeBack {
+    transform: translateX(50%);
+  }
+  .content {
+    position: absolute;
+    align-items: baseline;
+  }
+  a:-webkit-any-link.carousel-control-next,
+  a:-webkit-any-link.carousel-control-prev {
+    display: none;
+  }
+}
